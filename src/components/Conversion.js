@@ -50,7 +50,7 @@ class Conversion extends Component {
           <Card title={`${this.props.data.base} to ${this.props.data.target}`} style={{width: 800, margin: 'auto'}} bordered={false}>
             <h1>{this.props.data.amount} {this.props.data.base} = {this.props.data.conversion} {this.props.data.target}</h1>
             <p>{this.props.data.date}</p>
-            <Button type='primary' onClick={this.handleClick.bind(this)}>
+            <Button type='primary' onClick={this.handleClick.bind(this)} style={{background: '#4767E0'}}>
               Details
               <Icon type='right'/>
             </Button>

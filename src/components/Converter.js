@@ -53,16 +53,17 @@ class Converter extends Component {
   render() { 
     return (
       <div>
-        <Select defaultValue="EUR" size='large' onChange={this.handleBaseChange.bind(this)}>
+        <h1 id='title'>Currency Converter</h1>
+        <Select defaultValue="EUR"  onChange={this.handleBaseChange.bind(this)}>
           {currencyCodes.map((code, index) => <Option value={code}>{code}</Option>)}
         </Select>
-        <InputNumber onChange={num => this.onChange(num)} style={{ width: 140, height: 40, fontSize: 'large'}}/>
+        <InputNumber min={0} defaultValue={1} onChange={num => this.onChange(num)} style={{ width: 140, height: 33, fontSize: 'large', marginTop: 1}}/>
         <h2> to </h2>
-        <Select defaultValue="USD" size='large' onChange={this.handleTargetChange.bind(this)}>
+        <Select defaultValue="USD" onChange={this.handleTargetChange.bind(this)}>
           {currencyCodes.map((code, index) => <Option value={code}>{code}</Option>)}
         </Select>
         <div>
-          <Button type='primary' icon='swap' size='large' onClick={this.getRate.bind(this)} style={{margin: '10px'}}>
+          <Button type='primary' icon='swap' size='large' onClick={this.getRate.bind(this)} style={{margin: '10px', background: '#4767E0'}}>
             Convert
           </Button>
           <Conversion data={this.state} />

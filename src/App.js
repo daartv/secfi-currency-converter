@@ -13,9 +13,8 @@ class App extends Component {
       <div>
         <Header style={{backgroundColor: 'white'}}>
           <img src={logo} alt="logo" className="App-logo"/>
-          <h1 className="App-title">Currency Converter</h1>
         </Header>
-        <Content style={{paddingTop: '100px', paddingBottom: '100px', textAlign: 'center'}}>
+        <Content style={{paddingTop: '10px', paddingBottom: '100px', textAlign: 'center'}}>
           <Converter />
         </Content>
       </div>

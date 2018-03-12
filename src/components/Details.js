@@ -17,7 +17,7 @@ class Details extends Component {
       let URL = `http://www.xe.com/en/currencycharts/?from=${this.props.currencies.base}&to=${this.props.currencies.target}&view=1M`
       console.log(this.props.currencies);
       return (
-        <Carousel effect='fade'>
+        <Carousel autoplay='true' dots='false'>
           <div>
             <h1>Fluctuation over the past 30 days</h1>
             <h2>
@@ -29,7 +29,7 @@ class Details extends Component {
           <div id='my-div'>
            <iframe src={URL} id="my-iframe" align='center' scrolling='no'></iframe>
           </div>
-        </Carousel>
+        </Carousel> 
       )
     }
   }
