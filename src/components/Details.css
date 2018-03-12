@@ -1,0 +1,29 @@
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 450px;
+  line-height: 30px;
+  background: #E6E6E6;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+#my-div
+{
+    margin: 0 auto;
+    width    : 150px;
+    height   : 450px;
+    overflow : hidden;
+    position : relative;
+}
+
+#my-iframe
+{
+    position : absolute;
+    top      : -360px;
+    left     : 0px;
+    width    : 750px;
+    height   : 1200px;
+}
