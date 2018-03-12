@@ -19,7 +19,7 @@ class Converter extends Component {
       rate: '',
       date: '',
       conversion: 0,
-      amount: 0
+      amount: 1
     };
   }
 
@@ -38,6 +38,7 @@ class Converter extends Component {
     let targetCurrencyCode = this.state.target;
     axios.get(`http://data.fixer.io/api/latest?access_key=9a15f817809d8d6ceee00fd850aa53f1&base=${baseCurrencyCode}&symbols=${targetCurrencyCode}`)
     .then(({data}) => {
+      console.log(data);
       let value = data.rates[this.state.target]
       this.setState({rate: value, date: data.date, conversion: this.state.amount * value});
     })
@@ -57,7 +58,7 @@ class Converter extends Component {
         <Select defaultValue="EUR"  onChange={this.handleBaseChange.bind(this)}>
           {currencyCodes.map((code, index) => <Option value={code}>{code}</Option>)}
         </Select>
-        <InputNumber min={0} defaultValue={1} onChange={num => this.onChange(num)} style={{ width: 140, height: 33, fontSize: 'large', marginTop: 1}}/>
+        <InputNumber min={0} defaultValue={1} onChange={num => this.onChange(num)} style={{ width: 140, height: 33.5, fontSize: 'large', marginTop: 1}}/>
         <h2> to </h2>
         <Select defaultValue="USD" onChange={this.handleTargetChange.bind(this)}>
           {currencyCodes.map((code, index) => <Option value={code}>{code}</Option>)}
