@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import { Card, Button, Icon } from 'antd';
-import Details from './Details.js'
+import Details from '../Details/Details.js'
 import 'antd/lib/card/style/css';
 import 'antd/lib/button/style/css';
 import 'antd/lib/icon/style/css';
 import axios from 'axios';
+import style from './style.js'
 
 class Conversion extends Component {
   constructor(props) {
@@ -47,10 +48,10 @@ class Conversion extends Component {
     } else {
       return (
         <div>
-          <Card title={`${this.props.data.base} to ${this.props.data.target}`} style={{width: 800, margin: 'auto'}} bordered={false}>
+          <Card title={`${this.props.data.base} to ${this.props.data.target}`} style={style.card} bordered={false}>
             <h1>{this.props.data.amount} {this.props.data.base} = {this.props.data.conversion} {this.props.data.target}</h1>
             <p>{this.props.data.date}</p>
-            <Button type='primary' onClick={this.handleClick.bind(this)} style={{background: '#4767E0'}}>
+            <Button type='primary' onClick={this.handleClick.bind(this)} style={style.button}>
               Details
               <Icon type='right'/>
             </Button>

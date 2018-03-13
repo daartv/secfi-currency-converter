@@ -1,4 +1,4 @@
-import Conversion from './Conversion.js'
+import Conversion from '../Conversion/Conversion.js'
 import React, {Component} from 'react';
 import { Select, InputNumber, Button, Icon } from 'antd';
 import 'antd/lib/button/style/css';
@@ -6,7 +6,8 @@ import 'antd/lib/select/style/css';
 import 'antd/lib/input-number/style/css';
 import 'antd/lib/icon/style/css';
 import axios from 'axios';
-import currencyCodes from '../currencyCodes.js';
+import currencyCodes from '../../currencyCodes.js';
+import style from './style.js'
 
 const Option = Select.Option;
 
@@ -58,13 +59,13 @@ class Converter extends Component {
         <Select defaultValue="EUR"  onChange={this.handleBaseChange.bind(this)}>
           {currencyCodes.map((code, index) => <Option value={code}>{code}</Option>)}
         </Select>
-        <InputNumber min={0} defaultValue={1} onChange={num => this.onChange(num)} style={{ width: 140, height: 33.5, fontSize: 'large', marginTop: 1}}/>
+        <InputNumber min={0} defaultValue={1} onChange={num => this.onChange(num)} style={style.inputNumber}/>
         <h2> to </h2>
         <Select defaultValue="USD" onChange={this.handleTargetChange.bind(this)}>
           {currencyCodes.map((code, index) => <Option value={code}>{code}</Option>)}
         </Select>
         <div>
-          <Button type='primary' icon='swap' size='large' onClick={this.getRate.bind(this)} style={{margin: '10px', background: '#4767E0'}}>
+          <Button type='primary' icon='swap' size='large' onClick={this.getRate.bind(this)} style={style.button}>
             Convert
           </Button>
           <Conversion data={this.state} />
